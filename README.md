@@ -25,7 +25,7 @@ Find out more about Managed Components [here](https://blog.cloudflare.com/zaraz-
 
 The Mixpanel Project Token is the unique identifier of your Mixpanel account. [Learn more](https://help.mixpanel.com/hc/en-us/articles/115004502806-Find-Project-Token-)
 
-### Is EU region `string`
+### Is EU region `boolean`
 
 Set it ON if you are enrolled in EU Data Residency. [Learn more](https://help.mixpanel.com/hc/en-us/articles/360039135652-Data-Residency-in-EU)
 
@@ -33,40 +33,41 @@ Set it ON if you are enrolled in EU Data Residency. [Learn more](https://help.mi
 
 > Fields are properties that can/must be sent with certain events
 
-### Track
-Track an event. Use custom fields to add tracked properties. [Learn more](https://developer.mixpanel.com/reference/track-event)
+### Track event name `string`
 
+`event` is the event name that will be sent with a Track event. [Learn more](https://developer.mixpanel.com/reference/track-event)
 
-### Create alias
-Creates an alias which Mixpanel will use to remap one id to another. [Learn more](https://developer.mixpanel.com/reference/identity-create-alias)
+### Identified ID `string`
 
+`$identified_id` is a unique user ID that will be connected to the anonymous distinct_id of the user. It must be provided with Identify event. [Learn more](https://help.mixpanel.com/hc/en-us/articles/3600410397711#user-identification)
 
-### Identify
-Identify a user with a unique ID to track user activity across devices, tie a user to their events, and create a user profile. [Learn more](https://developer.mixpanel.com/reference/create-identity)
+### Alias `string`
 
+`alias` which Mixpanel will use to remap one id to another. Multiple aliases can point to the same identifier. It must be provided with Create alias event. [Learn more](https://help.mixpanel.com/hc/en-us/articles/360041039771#user-identification)
 
-### Update user properties
-Update a user record or its properties. Use custom fields to add properties. For Union action provide values comma separated, if it is a list. [Learn more](https://developer.mixpanel.com/reference/profile-set)
+### Group key `string`
 
+`$group_key` is a unique key for a group of user profiles. It must be provided with Update group properties, Delete group properties or Delete group profile events. [Learn more](https://help.mixpanel.com/hc/en-us/articles/360025333632)
 
-### Update group properties
-Update a group record or its properties. Use custom fields to add properties. For Union action provide values comma separated, if it is a list. [Learn more](https://developer.mixpanel.com/reference/group-set-property)
+### Group ID `string`
 
+`$group_id` is the ID for a group of user profiles. It must be provided with Update group properties, Delete group properties or Delete group profile events. [Learn more](https://help.mixpanel.com/hc/en-us/articles/360025333632)
 
-### Delete user properties
-Delete a property and its value from a user profile. [Learn more](https://developer.mixpanel.com/reference/profile-delete-property)
+### List of properties to delete `string`
 
+`unsetList` is a comma separated list of properties to delete. It must be provided with Delete user properties or Delete group properties events. [Learn more](https://developer.mixpanel.com/reference/group-set-property)
 
-### Delete group properties
-Delete a property and its value from a group profile. [Learn more](https://developer.mixpanel.com/reference/group-delete-property)
+### Ignore alias `boolean`
 
+`$ignore_alias` is used to ignore alias when deleting a profile. It must be provided with Delete user profile event. [Learn more](https://developer.mixpanel.com/reference/delete-profile)
 
-### Delete user profile
-Delete the current user profile with all of its properties. [Learn more](https://developer.mixpanel.com/reference/delete-profile)
+### User profile action `string`
 
+`user-set-action` specifies the action to be applied to a user profile. It must be provided with Update user properties event. [Learn more](https://developer.mixpanel.com/reference/profile-set)
 
-### Delete group profile
-Delete a group profile with all of its properties. [Learn more](https://developer.mixpanel.com/reference/delete-group)
+### Group profile action `string`
+
+`group-set-action` specifies the action to be applied to a group profile. It must be provided with Update group properties event. [Learn more](https://developer.mixpanel.com/reference/group-set-property)
 
 ## 📝 License
 
