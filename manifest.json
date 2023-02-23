@@ -1,0 +1,15 @@
+{
+  "name": "Mixpanel",
+  "namespace": "mixpanel",
+  "description": "A Managed Component for Mixpanel",
+  "icon": "assets/icon.svg",
+  "categories": ["Analytics"],
+  "provides": ["events"],
+  "allowCustomFields": true,
+  "permissions": {
+    "access_client_kv": {
+      "description": "This permission is used to facilitate better a user experience.",
+      "required": true
+    }
+  }
+}
