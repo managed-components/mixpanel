@@ -1,4 +1,4 @@
-# MC Dynamite Managed Component
+# Mixpanel Managed Component
 
 ## Documentation
 
