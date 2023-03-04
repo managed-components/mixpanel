@@ -316,38 +316,38 @@ export const getDeleteProfileEventArgs = (
 export default async function (manager: Manager, settings: ComponentSettings) {
   manager.addEventListener('track', (event: MCEvent) => {
     const { url, opts } = getTrackEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('create_alias', (event: MCEvent) => {
     const { url, opts } = getAliasEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('identify', (event: MCEvent) => {
     const { url, opts } = getIdentifyEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('set_user_property', (event: MCEvent) => {
     const { url, opts } = getSetPropertiesEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('set_group_property', (event: MCEvent) => {
     const { url, opts } = getSetPropertiesEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('unset_user_property', (event: MCEvent) => {
     const { url, opts } = getUnsetPropertiesEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('unset_group_property', (event: MCEvent) => {
     const { url, opts } = getUnsetPropertiesEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('delete_user_profile', (event: MCEvent) => {
     const { url, opts } = getDeleteProfileEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
   manager.addEventListener('delete_group_profile', (event: MCEvent) => {
     const { url, opts } = getDeleteProfileEventArgs(settings, event)
-    fetch(url, opts)
+    manager.fetch(url, opts)
   })
 }
