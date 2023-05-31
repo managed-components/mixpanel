@@ -92,7 +92,7 @@ describe('Mixpanel MC track event handler works correctly', () => {
     expect(body?.properties?.ip).toEqual(fakeEvent.client.ip)
     expect(body?.properties?.$referrer).toEqual('$direct')
     expect(body?.properties?.$referring_domain).toEqual('$direct')
-    expect(body?.properties?.$currentUrl).toEqual(fakeEvent.client.url.href)
+    expect(body?.properties?.$current_url).toEqual(fakeEvent.client.url.href)
     expect(body?.properties?.$screen_height).toEqual(
       fakeEvent.client.screenHeight
     )
@@ -151,7 +151,7 @@ describe('Mixpanel MC identify event handler works correctly', () => {
     expect(body?.properties?.ip).toEqual(fakeEvent.client.ip)
     expect(body?.properties?.$referrer).toEqual('$direct')
     expect(body?.properties?.$referring_domain).toEqual('$direct')
-    expect(body?.properties?.$currentUrl).toEqual(fakeEvent.client.url.href)
+    expect(body?.properties?.$current_url).toEqual(fakeEvent.client.url.href)
     expect(body?.properties?.$screen_height).toEqual(
       fakeEvent.client.screenHeight
     )
@@ -223,7 +223,7 @@ describe('Mixpanel MC alias event handler works correctly', () => {
     expect(body?.properties?.ip).toEqual(fakeEvent.client.ip)
     expect(body?.properties?.$referrer).toEqual('$direct')
     expect(body?.properties?.$referring_domain).toEqual('$direct')
-    expect(body?.properties?.$currentUrl).toEqual(fakeEvent.client.url.href)
+    expect(body?.properties?.$current_url).toEqual(fakeEvent.client.url.href)
     expect(body?.properties?.$screen_height).toEqual(
       fakeEvent.client.screenHeight
     )
