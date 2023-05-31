@@ -112,7 +112,7 @@ const getRequestBodyProperties = (event: MCEvent, token: string) => {
     $referring_domain: isValidHttpUrl(client.referer)
       ? new URL(client.referer).host
       : '$direct',
-    $currentUrl: client.url.href,
+    $current_url: client.url.href,
     $screen_height: client.screenHeight,
     $screen_width: client.screenWidth,
     $browser: browser.name,
