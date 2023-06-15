@@ -1,4 +1,5 @@
 import { MCEvent } from '@managed-components/types'
+import crypto from 'crypto'
 import {
   getTrackEventArgs,
   getAliasEventArgs,
@@ -7,6 +8,8 @@ import {
   getUnsetPropertiesEventArgs,
   getDeleteProfileEventArgs,
 } from '.'
+
+vi.stubGlobal('crypto', require('crypto'))
 
 const settings = {
   token: '12345',
