@@ -42,14 +42,14 @@ const dummyClient = {
   fetch: () => undefined,
   set: () => undefined,
   execute: () => undefined,
-  return: () => {},
+  return: () => undefined,
   get: (key: string) => {
     if (key === settings.token) {
       return cookie
     }
   },
-  attachEvent: () => {},
-  detachEvent: () => {},
+  attachEvent: () => undefined,
+  detachEvent: () => undefined,
 }
 
 const uuidPattern =

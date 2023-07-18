@@ -80,7 +80,7 @@ const handleCookieData = (
     } catch {
       setFreshCookie()
     }
-    if (!cookieData.hasOwnProperty('distinct_id')) {
+    if (!cookieData?.distinct_id) {
       setFreshCookie()
     }
     // add userId to cookie if cookie already exists
@@ -236,7 +236,8 @@ export const getSetPropertiesEventArgs = (
     ...customFields
   } = event.payload
   const { isEU, token } = settings
-  const actionKey = SetActionsMap[action || groupAction]
+  const actionKey =
+    SetActionsMap[(action || groupAction) as keyof typeof SetActionsMap]
 
   const requestBody = {
     ...getProfileRequestBodyProperties(event, token),
