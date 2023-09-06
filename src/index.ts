@@ -113,6 +113,11 @@ const getRequestBodyProperties = (event: MCEvent, token: string) => {
       ? new URL(client.referer).host
       : '$direct',
     $current_url: client.url.href,
+    $current_domain: client.url.hostname,
+    $current_page_title: client.title,
+    $current_url_path: client.url.pathname,
+    $current_url_search: client.url.search,
+    $current_url_protocol: client.url.protocol,
     $screen_height: client.screenHeight,
     $screen_width: client.screenWidth,
     $browser: browser.name,
