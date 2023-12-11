@@ -9,7 +9,9 @@ import {
   getDeleteProfileEventArgs,
 } from '.'
 
-vi.stubGlobal('crypto', crypto)
+if (!global.crypto) {
+  vi.stubGlobal('crypto', crypto)
+}
 
 const settings = {
   token: '12345',
