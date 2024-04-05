@@ -10,6 +10,10 @@
     "access_client_kv": {
       "description": "This permission is used to facilitate better a user experience.",
       "required": true
+    },
+    "server_network_requests": {
+      "description": "Mixpanel uses serverside network requests to report data",
+      "required": true
     }
   }
 }
