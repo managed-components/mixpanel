@@ -100,7 +100,6 @@ const getRequestBodyProperties = (event: MCEvent, token: string) => {
     event.client.userAgent
   ).getResult()
   const cookieData = handleCookieData(client, token, $identified_id)
-
   return {
     token,
     $device_id: cookieData.$device_id,
@@ -124,6 +123,8 @@ const getRequestBodyProperties = (event: MCEvent, token: string) => {
     $browser_version: browser.version,
     $os: os.name,
     $device: device.model,
+    $gclid: client.url.searchParams.get('gclid'),
+    $fbclid: client.url.searchParams.get('fbclid'),
   }
 }
 
